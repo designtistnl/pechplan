@@ -3,7 +3,7 @@
 @section('title', 'PechPlan voor garages - Pechhulp die uw klant terugbrengt bij u')
 @section('meta_description', 'PechPlan voor garages: bied uw klanten pechhulp aan, bouw een garagefonds op en versterk uw klantrelatie. Uw garage als eerste aanspreekpunt bij pech.')
 
-@section('og_image', url('/images/Workshop-at-golden-hour.png'))
+@section('og_image', url('/images/Workshop-at-golden-hour.webp'))
 
 @section('structured_data')
     <script type="application/ld+json">
@@ -132,7 +132,7 @@
         content: '';
         position: absolute;
         inset: 0;
-        background: url('/images/Workshop-at-golden-hour.png') center center / cover no-repeat;
+        background: url('/images/Workshop-at-golden-hour.webp') center center / cover no-repeat;
         opacity: 0.25;
     }
     .garage-hero::after {
@@ -390,7 +390,7 @@
     <!-- Contact -->
     <section id="contact" class="py-20 sm:py-28 relative overflow-hidden">
         <div class="absolute inset-0 bg-pech-dark"></div>
-        <div class="absolute inset-0 opacity-15" style="background: url('/images/Dark-pattern-bg.png') center center / cover no-repeat;"></div>
+        <div class="absolute inset-0 opacity-15" style="background: url('/images/Dark-pattern-bg.webp') center center / cover no-repeat;"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
                 <div class="fade-in">

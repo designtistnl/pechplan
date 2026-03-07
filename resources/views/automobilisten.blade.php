@@ -3,7 +3,7 @@
 @section('title', 'PechPlan voor automobilisten - Laat pech snel achter u')
 @section('meta_description', 'PechPlan voor automobilisten: pechhulp via uw eigen garage. Altijd geholpen met ANWB als achtervang. Dekking in Nederland of Europa.')
 
-@section('og_image', url('/images/Road-at-golden-hour.png'))
+@section('og_image', url('/images/Road-at-golden-hour.webp'))
 
 @section('structured_data')
     <script type="application/ld+json">
@@ -42,6 +42,54 @@
                 }
             ]
         }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@@type": "Question",
+                "name": "Hoe werkt PechPlan?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "U ontvangt een PechPlan pas via uw garage. Bij pech scant u de QR-code, belt u 088 247 47 47 of gaat u online. Uw eigen garage wordt als eerste benaderd. Kan die niet helpen? Dan schakelt PechPlan automatisch de ANWB of een bergingsdienst in."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wat kost PechPlan?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "PechPlan Nederland kost vanaf 64,95 euro per jaar. PechPlan Europa kost vanaf 79,95 euro per jaar. De uiteindelijke prijs wordt bepaald door uw garage."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Wat is het verschil tussen PechPlan en de ANWB?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Bij PechPlan wordt bij pech eerst uw eigen garage ingeschakeld, die uw auto kent. Kan uw garage niet helpen? Dan schakelt PechPlan de ANWB in als professionele achtervang. Zo combineert u de persoonlijke service van uw garage met de betrouwbaarheid van de ANWB."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Hoe sluit ik PechPlan af?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "PechPlan is beschikbaar via aangesloten garages. Vraag uw garage naar de mogelijkheden van PechPlan. Biedt uw garage PechPlan nog niet aan? Tip uw garage via pechplan.nl/automobilisten."
+                }
+            },
+            {
+                "@@type": "Question",
+                "name": "Is PechPlan 24/7 bereikbaar?",
+                "acceptedAnswer": {
+                    "@@type": "Answer",
+                    "text": "Ja, PechPlan is 24 uur per dag, 7 dagen per week bereikbaar. Bij pech kunt u altijd bellen naar 088 247 47 47 of online hulp aanvragen."
+                }
+            }
+        ]
     }
     </script>
 @endsection
@@ -89,7 +137,7 @@
         content: '';
         position: absolute;
         inset: 0;
-        background: url('/images/Road-at-golden-hour.png') center center / cover no-repeat;
+        background: url('/images/Road-at-golden-hour.webp') center center / cover no-repeat;
         opacity: 0.3;
     }
     .auto-hero::after {
@@ -331,7 +379,7 @@
     <!-- Tip uw garage -->
     <section id="tip-garage" class="py-20 sm:py-28 relative overflow-hidden">
         <div class="absolute inset-0 bg-pech-dark"></div>
-        <div class="absolute inset-0 opacity-15" style="background: url('/images/Dark-pattern-bg.png') center center / cover no-repeat;"></div>
+        <div class="absolute inset-0 opacity-15" style="background: url('/images/Dark-pattern-bg.webp') center center / cover no-repeat;"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
                 <div class="fade-in">

@@ -16,13 +16,13 @@
 
 ## 1. Technische SEO
 
-- [ ] Afbeeldingen converteren naar WebP formaat
+- [x] Afbeeldingen converteren naar WebP formaat (7.1MB -> 452KB)
 - [ ] Lazy loading op afbeeldingen (`loading="lazy"`)
 - [ ] Preload critical assets (fonts, hero afbeeldingen)
-- [ ] Hreflang tag toevoegen (nl-NL)
+- [x] Hreflang tag toevoegen (nl-NL + x-default)
 - [ ] Breadcrumbs structured data
 - [ ] LocalBusiness structured data
-- [ ] FAQ structured data op automobilisten-pagina
+- [x] FAQ structured data op automobilisten-pagina (5 vragen)
 - [ ] Review/Rating structured data voorbereiden
 
 ## 2. Content SEO
@@ -50,13 +50,13 @@
 - [ ] Core Web Vitals optimaliseren (LCP, FID, CLS)
 - [ ] Server-side caching (Laravel response cache)
 - [ ] CDN voor statische assets
-- [ ] Preconnect naar externe domeinen (fonts, GTM)
-- [ ] Font-display: swap voor webfonts
+- [x] Preconnect naar externe domeinen (fonts, GTM)
+- [x] Font-display: swap voor webfonts (reeds in Google Fonts URL)
 - [ ] Critical CSS inline
 
 ## 6. SEA-voorbereiding
 
-- [ ] Conversietracking events in GTM (formulier-submits als conversie)
+- [x] Conversietracking events in GTM (formulier-submits als conversie via dataLayer)
 - [ ] Remarketingpixel (Google Ads, evt. Meta)
 - [ ] UTM-parameter tracking op formulieren
 

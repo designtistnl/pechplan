@@ -44,6 +44,12 @@
     <meta name="geo.placename" content="Nederland">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+    <link rel="alternate" hreflang="nl-NL" href="{{ url()->current() }}">
+    <link rel="alternate" hreflang="x-default" href="{{ url()->current() }}">
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
     <!-- Organization Schema (global) -->
     <script type="application/ld+json">
@@ -210,7 +216,7 @@
     <!-- Footer -->
     <footer class="relative overflow-hidden py-8">
         <div class="absolute inset-0 bg-pech-dark"></div>
-        <div class="absolute inset-0 opacity-15" style="background: url('/images/Dark-pattern-bg.png') center center / cover no-repeat;"></div>
+        <div class="absolute inset-0 opacity-15" style="background: url('/images/Dark-pattern-bg.webp') center center / cover no-repeat;"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <img src="/images/PechPlan-logo-vector-WO.svg" alt="PechPlan" class="h-6 opacity-40">
@@ -238,6 +244,10 @@
             overlay.style.opacity = '1';
             modal.style.transform = 'scale(1) translateY(0)';
         });
+        // GTM conversion tracking
+        if (window.dataLayer) {
+            window.dataLayer.push({ 'event': 'form_submission', 'form_type': '{{ request()->is("contact") ? "contact" : (request()->is("tip-garage") ? "garage_tip" : "form") }}' });
+        }
         function closeSuccessOverlay() {
             const overlay = document.getElementById('success-overlay');
             const modal = document.getElementById('success-modal');

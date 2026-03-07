@@ -2,7 +2,7 @@
 
 @section('title', 'PechPlan - Laat pech snel achter u | Pechhulp via uw eigen garage')
 @section('meta_description', 'PechPlan biedt pechhulp via uw eigen garage. Bij pech wordt eerst uw garage benaderd. ANWB als achtervang. 24/7 bereikbaar. Dekking in Nederland en Europa.')
-@section('og_image', url('/images/Workshop-at-golden-hour.png'))
+@section('og_image', url('/images/Workshop-at-golden-hour.webp'))
 
 @section('structured_data')
     <script type="application/ld+json">
@@ -90,11 +90,11 @@
         background-repeat: no-repeat;
     }
     .hero-bg-garages {
-        background-image: url('/images/Workshop-at-golden-hour.png');
+        background-image: url('/images/Workshop-at-golden-hour.webp');
         opacity: 1;
     }
     .hero-bg-auto {
-        background-image: url('/images/Road-at-golden-hour.png');
+        background-image: url('/images/Road-at-golden-hour.webp');
         opacity: 0;
     }
     .hero-bg.active {
@@ -313,7 +313,7 @@
     <!-- Contact -->
     <section id="contact" class="py-20 sm:py-28 relative overflow-hidden">
         <div class="absolute inset-0 bg-pech-dark"></div>
-        <div class="absolute inset-0 opacity-15" style="background: url('/images/Dark-pattern-bg.png') center center / cover no-repeat;"></div>
+        <div class="absolute inset-0 opacity-15" style="background: url('/images/Dark-pattern-bg.webp') center center / cover no-repeat;"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
                 <div class="fade-in">
