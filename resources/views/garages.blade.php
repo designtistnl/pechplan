@@ -102,6 +102,27 @@
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
     }
+    .subnav-link {
+        position: relative;
+        border-bottom: 3px solid transparent;
+        padding-bottom: 10px;
+    }
+    .subnav-link:hover {
+        border-bottom-color: rgba(235, 138, 0, 0.4);
+    }
+    .subnav-link.active,
+    .subnav-link.active:hover {
+        border-bottom-color: #eb8a00;
+    }
+    .subnav-scroll::-webkit-scrollbar { display: none; }
+    .subnav-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    @keyframes nudge-right {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(4px); }
+    }
+    .subnav-arrow-icon {
+        animation: nudge-right 1.5s ease-in-out infinite;
+    }
     .garage-hero {
         position: relative;
         overflow: hidden;
@@ -140,8 +161,8 @@
 
     <!-- Sticky sub-navigation -->
     <div class="sticky top-20 z-40 bg-white/90 subnav-sticky border-b border-gray-200/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <nav class="flex overflow-x-auto subnav-scroll gap-1 py-1" aria-label="Garage informatie">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <nav id="garage-subnav-scroll" class="flex overflow-x-auto subnav-scroll gap-1" aria-label="Garage informatie">
                 <button data-section="wat-is-pechplan" class="subnav-link active whitespace-nowrap px-4 py-3 text-sm font-medium text-pech-dark cursor-pointer">Wat is PechPlan?</button>
                 <button data-section="hoe-werkt-het" class="subnav-link whitespace-nowrap px-4 py-3 text-sm font-medium text-gray-400 cursor-pointer">Hoe werkt het?</button>
                 <button data-section="tarieven" class="subnav-link whitespace-nowrap px-4 py-3 text-sm font-medium text-gray-400 cursor-pointer">Tarieven</button>
@@ -149,6 +170,9 @@
                 <button data-section="voordelen" class="subnav-link whitespace-nowrap px-4 py-3 text-sm font-medium text-gray-400 cursor-pointer">Voordelen</button>
                 <button data-section="faq" class="subnav-link whitespace-nowrap px-4 py-3 text-sm font-medium text-gray-400 cursor-pointer">Veelgestelde vragen</button>
             </nav>
+            <button id="garage-subnav-arrow" class="absolute right-0 top-0 bottom-0 flex items-center pl-4 pr-1 bg-gradient-to-l from-white/90 via-white/90 to-transparent md:hidden" aria-label="Meer items" onclick="scrollGarageSubnavNext()">
+                <svg class="w-5 h-5 text-pech-orange subnav-arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </button>
         </div>
     </div>
 
@@ -261,20 +285,44 @@
                         </div>
                         <p class="text-gray-500 text-sm mt-5">Hoe groter het aantal aangesloten klanten, hoe groter de buffer in uw fonds.</p>
                     </div>
-                    <div class="bg-pech-dark rounded-2xl p-6 sm:p-8 text-white">
-                        <h3 class="font-bold text-lg mb-2 flex items-center gap-2"><svg class="w-5 h-5 text-pech-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>Praktijkvoorbeeld</h3>
-                        <p class="text-white/60 text-sm mb-6">Garage Visser uit Groningen</p>
-                        <div class="space-y-4">
-                            <div class="bg-white/5 rounded-xl p-4"><div class="text-white/60 text-sm mb-1">Aantal PechPlan passen (NL dekking)</div><div class="text-2xl font-bold">25 passen</div></div>
-                            <div class="bg-white/5 rounded-xl p-4"><div class="text-white/60 text-sm mb-1">Totale reservering (25 &times; &euro;50)</div><div class="text-2xl font-bold text-pech-orange">&euro;1.250</div></div>
-                            <div class="border-t border-white/10 pt-4">
-                                <p class="text-white/80 text-sm mb-3">Er ontstaat een pechgeval. De garage kan niet helpen. PechPlan schakelt de ANWB in.</p>
-                                <div class="flex items-center justify-between bg-white/5 rounded-xl p-4">
-                                    <div><div class="text-white/60 text-sm">Kosten hulpverlening</div><div class="text-xl font-bold text-red-400">&minus;&euro;700</div></div>
-                                    <div class="text-right"><div class="text-white/60 text-sm">Nieuw saldo</div><div class="text-xl font-bold text-pech-orange">&euro;550</div></div>
+                    <div class="bg-white rounded-2xl p-6 sm:p-8 border border-gray-200 shadow-sm">
+                        <h3 class="font-bold text-lg mb-2 flex items-center gap-2 text-pech-dark"><svg class="w-5 h-5 text-pech-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>Praktijkvoorbeeld</h3>
+                        <!-- Tabs -->
+                        <div class="flex gap-2 mb-6">
+                            <button onclick="showExample(1)" id="example-tab-1" class="example-tab px-4 py-1.5 rounded-full text-sm font-medium bg-pech-orange text-white cursor-pointer transition-colors duration-200">ANWB inschakeling</button>
+                            <button onclick="showExample(2)" id="example-tab-2" class="example-tab px-4 py-1.5 rounded-full text-sm font-medium bg-gray-100 text-gray-500 hover:bg-gray-200 cursor-pointer transition-colors duration-200">Garage factureert zelf</button>
+                        </div>
+                        <!-- Voorbeeld 1: ANWB -->
+                        <div id="example-1" class="example-panel">
+                            <p class="text-gray-500 text-sm mb-4">Garage Visser uit Groningen</p>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 rounded-xl p-4"><div class="text-gray-500 text-sm mb-1">Aantal PechPlan passen (NL dekking)</div><div class="text-2xl font-bold text-pech-dark">25 passen</div></div>
+                                <div class="bg-gray-50 rounded-xl p-4"><div class="text-gray-500 text-sm mb-1">Totale reservering (25 &times; &euro;50)</div><div class="text-2xl font-bold text-pech-orange">&euro;1.250</div></div>
+                                <div class="border-t border-gray-200 pt-4">
+                                    <p class="text-gray-600 text-sm mb-3">Er ontstaat een pechgeval. De garage kan niet helpen. PechPlan schakelt de ANWB in.</p>
+                                    <div class="flex items-center justify-between bg-gray-50 rounded-xl p-4">
+                                        <div><div class="text-gray-500 text-sm">Kosten hulpverlening</div><div class="text-xl font-bold text-red-500">&minus;&euro;700</div></div>
+                                        <div class="text-right"><div class="text-gray-500 text-sm">Nieuw saldo</div><div class="text-xl font-bold text-pech-orange">&euro;550</div></div>
+                                    </div>
                                 </div>
+                                <p class="text-gray-400 text-sm">Het fonds werkt als collectieve buffer voor de pechhulp van uw klanten.</p>
                             </div>
-                            <p class="text-white/50 text-sm">Het fonds werkt als collectieve buffer voor de pechhulp van uw klanten.</p>
+                        </div>
+                        <!-- Voorbeeld 2: Garage factureert zelf -->
+                        <div id="example-2" class="example-panel hidden">
+                            <p class="text-gray-500 text-sm mb-4">Autoservice De Jong uit Utrecht</p>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 rounded-xl p-4"><div class="text-gray-500 text-sm mb-1">Aantal PechPlan passen (NL dekking)</div><div class="text-2xl font-bold text-pech-dark">40 passen</div></div>
+                                <div class="bg-gray-50 rounded-xl p-4"><div class="text-gray-500 text-sm mb-1">Totale reservering (40 &times; &euro;50)</div><div class="text-2xl font-bold text-pech-orange">&euro;2.000</div></div>
+                                <div class="border-t border-gray-200 pt-4">
+                                    <p class="text-gray-600 text-sm mb-3">Een klant staat met pech langs de weg. De garage helpt zelf en factureert de reparatie aan PechPlan.</p>
+                                    <div class="flex items-center justify-between bg-gray-50 rounded-xl p-4">
+                                        <div><div class="text-gray-500 text-sm">Factuurbedrag garage</div><div class="text-xl font-bold text-red-500">&minus;&euro;350</div></div>
+                                        <div class="text-right"><div class="text-gray-500 text-sm">Nieuw saldo</div><div class="text-xl font-bold text-pech-orange">&euro;1.650</div></div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-400 text-sm">De garage helpt de eigen klant en ontvangt direct vergoeding uit het fonds.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -291,10 +339,6 @@
                         <div class="benefit-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center"><svg class="w-14 h-14 text-pech-orange mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg><h3 class="font-bold text-pech-dark mb-2">Sterkere klantenbinding</h3><p class="text-gray-500 text-sm leading-relaxed">Veel garages koppelen PechPlan aan periodiek onderhoud, APK en onderhoudscontracten voor sterkere binding.</p></div>
                         <div class="benefit-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center"><svg class="w-14 h-14 text-pech-orange mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg><h3 class="font-bold text-pech-dark mb-2">Extra inkomsten mogelijk</h3><p class="text-gray-500 text-sm leading-relaxed">Wanneer u zelf pechhulp verleent, kunt u deze factureren vanuit uw garagefonds via het PechPlan portaal.</p></div>
                         <div class="benefit-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center"><svg class="w-14 h-14 text-pech-orange mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"/></svg><h3 class="font-bold text-pech-dark mb-2">Eigen branding mogelijk</h3><p class="text-gray-500 text-sm leading-relaxed">Bij meer dan 100 pashouders kan de PechPlan pas worden uitgevoerd met uw eigen logo. Dit versterkt de professionele uitstraling.</p></div>
-                    </div>
-                    <div class="mt-8 bg-pech-orange/5 border border-pech-orange/20 rounded-2xl p-6 flex items-start gap-4">
-                        <div class="w-10 h-10 rounded-xl bg-pech-orange/10 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-pech-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016A3.001 3.001 0 0021 9.349"/></svg></div>
-                        <div><h3 class="font-bold text-pech-dark mb-1">Kickback voor garageformules</h3><p class="text-gray-600 text-sm">Bij garages die zijn aangesloten bij een formule, ontvangt de formule jaarlijks &euro;2,50 voor iedere pashouder.</p></div>
                     </div>
                 </div>
             </div>
@@ -356,14 +400,20 @@
                         <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-pech-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg></div><div><div class="text-white/40 text-sm">Telefoon</div><a href="tel:0882474747" class="text-white font-semibold hover:text-pech-orange transition-colors">088 247 47 47</a></div></div>
                         <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-pech-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></div><div><div class="text-white/40 text-sm">E-mail</div><a href="mailto:info@pechplan.nl" class="text-white font-semibold hover:text-pech-orange transition-colors">info@pechplan.nl</a></div></div>
                     </div>
-                    <div class="mt-10"><img src="/images/PechPlan-logo-vector-WO.svg" alt="PechPlan" class="h-10 opacity-60"><p class="text-white/30 text-sm mt-3">powered by Next Fleetservice</p></div>
                 </div>
                 <div class="fade-in">
-                    <form class="bg-white/5 backdrop-blur rounded-2xl p-6 sm:p-8 border border-white/10 space-y-5">
-                        <div><label for="name" class="block text-white/60 text-sm mb-1.5">Naam</label><input type="text" id="name" name="name" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors" placeholder="Uw naam"></div>
-                        <div><label for="company" class="block text-white/60 text-sm mb-1.5">Bedrijfsnaam</label><input type="text" id="company" name="company" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors" placeholder="Uw garage of bedrijf"></div>
-                        <div><label for="email" class="block text-white/60 text-sm mb-1.5">E-mailadres</label><input type="email" id="email" name="email" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors" placeholder="uw@email.nl"></div>
-                        <div><label for="message" class="block text-white/60 text-sm mb-1.5">Bericht</label><textarea id="message" name="message" rows="4" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors resize-none" placeholder="Uw bericht..."></textarea></div>
+                    @if($errors->any())
+                    <div class="bg-red-500/20 border border-red-500/30 rounded-lg p-4 mb-4 text-red-300">
+                        <ul class="list-disc list-inside space-y-1">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul>
+                    </div>
+                    @endif
+                    <form action="{{ route('contact.submit') }}" method="POST" class="bg-white/5 backdrop-blur rounded-2xl p-6 sm:p-8 border border-white/10 space-y-5">
+                        @csrf
+                        <input type="hidden" name="source" value="Garages">
+                        <div><label for="name" class="block text-white/60 text-sm mb-1.5">Naam</label><input type="text" id="name" name="name" value="{{ old('name') }}" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors" placeholder="Uw naam" required></div>
+                        <div><label for="company" class="block text-white/60 text-sm mb-1.5">Bedrijfsnaam</label><input type="text" id="company" name="company" value="{{ old('company') }}" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors" placeholder="Uw garage of bedrijf"></div>
+                        <div><label for="email" class="block text-white/60 text-sm mb-1.5">E-mailadres</label><input type="email" id="email" name="email" value="{{ old('email') }}" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors" placeholder="uw@email.nl" required></div>
+                        <div><label for="message" class="block text-white/60 text-sm mb-1.5">Bericht</label><textarea id="message" name="message" rows="4" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors resize-none" placeholder="Uw bericht..." required>{{ old('message') }}</textarea></div>
                         <button type="submit" class="w-full bg-pech-orange hover:bg-pech-orange-dark text-white py-3.5 rounded-lg font-semibold transition-colors duration-200 cursor-pointer inline-flex items-center justify-center gap-2">Verstuur bericht <svg class="w-5 h-5 btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></button>
                     </form>
                 </div>
@@ -379,6 +429,7 @@
         const logoWhite = document.querySelector('.logo-white');
         const logoDark = document.querySelector('.logo-dark');
         const navLinks = document.querySelectorAll('.nav-link');
+        const mobileBtn = document.getElementById('mobile-menu-btn');
 
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset > 80;
@@ -387,6 +438,8 @@
             navbar.classList.toggle('shadow-black/5', scrolled);
             logoWhite.classList.toggle('hidden', scrolled);
             logoDark.classList.toggle('hidden', !scrolled);
+            mobileBtn.classList.toggle('text-white', !scrolled);
+            mobileBtn.classList.toggle('text-pech-dark', scrolled);
             navLinks.forEach(link => {
                 link.classList.toggle('text-white/80', !scrolled);
                 link.classList.toggle('hover:text-white', !scrolled);
@@ -395,18 +448,61 @@
             });
         });
 
+        // Praktijkvoorbeeld tabs
+        function showExample(n) {
+            document.querySelectorAll('.example-panel').forEach(p => p.classList.add('hidden'));
+            document.querySelectorAll('.example-tab').forEach(t => { t.classList.remove('bg-pech-orange', 'text-white'); t.classList.add('bg-gray-100', 'text-gray-500'); });
+            document.getElementById('example-' + n).classList.remove('hidden');
+            const tab = document.getElementById('example-tab-' + n);
+            tab.classList.remove('bg-gray-100', 'text-gray-500');
+            tab.classList.add('bg-pech-orange', 'text-white');
+        }
+
         // Garage sub-navigation
         const subnav = document.querySelector('.subnav-sticky');
+        const garageSubnavScroll = document.getElementById('garage-subnav-scroll');
+        const garageSubnavArrow = document.getElementById('garage-subnav-arrow');
+        const garageSubnavLinks = document.querySelectorAll('.subnav-link');
+
+        function centerGarageSubnavLink(link) {
+            const nav = garageSubnavScroll;
+            const linkCenter = link.offsetLeft + link.offsetWidth / 2;
+            const navCenter = nav.offsetWidth / 2;
+            nav.scrollTo({ left: linkCenter - navCenter, behavior: 'smooth' });
+        }
+
+        function scrollGarageSubnavNext() {
+            const nav = garageSubnavScroll;
+            const scrollRight = nav.scrollLeft + nav.offsetWidth;
+            for (const link of garageSubnavLinks) {
+                if (link.offsetLeft + link.offsetWidth > scrollRight) {
+                    centerGarageSubnavLink(link);
+                    break;
+                }
+            }
+        }
+
+        function updateGarageSubnavArrow() {
+            if (!garageSubnavArrow) return;
+            const nav = garageSubnavScroll;
+            const atEnd = nav.scrollLeft + nav.offsetWidth >= nav.scrollWidth - 5;
+            garageSubnavArrow.style.opacity = atEnd ? '0' : '1';
+            garageSubnavArrow.style.pointerEvents = atEnd ? 'none' : 'auto';
+        }
+        garageSubnavScroll.addEventListener('scroll', updateGarageSubnavArrow);
+        window.addEventListener('resize', updateGarageSubnavArrow);
+        updateGarageSubnavArrow();
+
         document.querySelectorAll('.subnav-link').forEach(link => {
             link.addEventListener('click', () => {
                 document.querySelectorAll('.subnav-link').forEach(l => { l.classList.remove('active', 'text-pech-dark'); l.classList.add('text-gray-400'); });
                 link.classList.add('active', 'text-pech-dark'); link.classList.remove('text-gray-400');
+                centerGarageSubnavLink(link);
                 document.querySelectorAll('.garage-panel').forEach(p => p.classList.add('hidden'));
                 const panel = document.getElementById('panel-' + link.dataset.section);
                 if (panel) {
                     panel.classList.remove('hidden');
                     panel.querySelectorAll('.fade-in').forEach(el => { el.classList.remove('visible'); requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('visible'))); });
-                    // Scroll so panel content starts just below navbar + sticky subnav + some breathing room
                     const offset = navbar.offsetHeight + subnav.offsetHeight + 24;
                     const panelTop = panel.getBoundingClientRect().top + window.pageYOffset - offset;
                     window.scrollTo({ top: panelTop, behavior: 'smooth' });

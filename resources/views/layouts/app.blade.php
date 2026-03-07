@@ -181,11 +181,10 @@
                 <div class="hidden md:flex items-center gap-8">
                     <a href="/garages" class="nav-link transition-colors duration-200 text-sm font-medium @yield('nav_link_class', 'text-white/80 hover:text-white')">Voor garages</a>
                     <a href="/automobilisten" class="nav-link transition-colors duration-200 text-sm font-medium @yield('nav_link_class', 'text-white/80 hover:text-white')">Voor automobilisten</a>
-                    <a href="@yield('contact_href', '/#contact')" class="nav-link transition-colors duration-200 text-sm font-medium @yield('nav_link_class', 'text-white/80 hover:text-white')">Contact</a>
-                    <a href="/help" class="bg-pech-orange hover:bg-pech-orange-dark text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors duration-200 cursor-pointer inline-flex items-center gap-2">
+                    {{-- <a href="/help" class="bg-pech-orange hover:bg-pech-orange-dark text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors duration-200 cursor-pointer inline-flex items-center gap-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
                         Pech melden
-                    </a>
+                    </a> --}}
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden p-2 cursor-pointer @yield('mobile_btn_class', 'text-white')" aria-label="Open menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -196,11 +195,10 @@
             <div class="px-4 py-4 space-y-3">
                 <a href="/garages" class="block text-white/80 hover:text-white transition-colors py-2 text-sm font-medium">Voor garages</a>
                 <a href="/automobilisten" class="block text-white/80 hover:text-white transition-colors py-2 text-sm font-medium">Voor automobilisten</a>
-                <a href="@yield('contact_href', '/#contact')" class="block text-white/80 hover:text-white transition-colors py-2 text-sm font-medium">Contact</a>
-                <a href="/help" class="flex items-center justify-center gap-2 bg-pech-orange hover:bg-pech-orange-dark text-white px-5 py-2.5 rounded-lg text-sm font-semibold text-center transition-colors">
+                {{-- <a href="/help" class="flex items-center justify-center gap-2 bg-pech-orange hover:bg-pech-orange-dark text-white px-5 py-2.5 rounded-lg text-sm font-semibold text-center transition-colors">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
                     Pech melden
-                </a>
+                </a> --}}
             </div>
         </div>
     </nav>
@@ -210,7 +208,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="relative overflow-hidden border-t border-white/5 py-8">
+    <footer class="relative overflow-hidden py-8">
         <div class="absolute inset-0 bg-pech-dark"></div>
         <div class="absolute inset-0 opacity-15" style="background: url('/images/Dark-pattern-bg.png') center center / cover no-repeat;"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -220,6 +218,35 @@
             </div>
         </div>
     </footer>
+
+    @if(session('success'))
+    <div id="success-overlay" class="fixed inset-0 z-[100] flex items-center justify-center p-4" style="opacity:0; transition: opacity 0.3s ease;">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeSuccessOverlay()"></div>
+        <div id="success-modal" class="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center" style="transform: scale(0.9) translateY(20px); transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5">
+                <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-pech-dark mb-2">Bericht verzonden!</h3>
+            <p class="text-gray-600 mb-6">{{ session('success') }}</p>
+            <button onclick="closeSuccessOverlay()" class="bg-pech-orange hover:bg-pech-orange-dark text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 cursor-pointer">Sluiten</button>
+        </div>
+    </div>
+    <script>
+        requestAnimationFrame(() => {
+            const overlay = document.getElementById('success-overlay');
+            const modal = document.getElementById('success-modal');
+            overlay.style.opacity = '1';
+            modal.style.transform = 'scale(1) translateY(0)';
+        });
+        function closeSuccessOverlay() {
+            const overlay = document.getElementById('success-overlay');
+            const modal = document.getElementById('success-modal');
+            modal.style.transform = 'scale(0.9) translateY(20px)';
+            overlay.style.opacity = '0';
+            setTimeout(() => overlay.remove(), 300);
+        }
+    </script>
+    @endif
 
     <script>
         // Mobile menu toggle

@@ -212,11 +212,11 @@
         <!-- Floating trust badges -->
         <div class="hidden lg:flex absolute right-8 top-1/2 -translate-y-1/2 flex-col gap-6" style="z-index:4">
             <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-                <div class="text-3xl font-bold text-pech-orange">24/7</div>
+                <div class="text-3xl font-bold text-white">24/7</div>
                 <div class="text-white/60 text-sm mt-1">Bereikbaar</div>
             </div>
             <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
-                <div class="text-3xl font-bold text-pech-orange">ANWB</div>
+                <div class="text-3xl font-bold text-white">ANWB</div>
                 <div class="text-white/60 text-sm mt-1">Achtervang</div>
             </div>
             <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
@@ -333,18 +333,21 @@
                             <div><div class="text-white/40 text-sm">E-mail</div><a href="mailto:info@pechplan.nl" class="text-white font-semibold hover:text-pech-orange transition-colors">info@pechplan.nl</a></div>
                         </div>
                     </div>
-                    <div class="mt-10">
-                        <img src="/images/PechPlan-logo-vector-WO.svg" alt="PechPlan" class="h-10 opacity-60">
-                        <p class="text-white/30 text-sm mt-3">powered by Next Fleetservice</p>
-                    </div>
                 </div>
                 <div class="fade-in">
-                    <form class="bg-white/5 backdrop-blur rounded-2xl p-6 sm:p-8 border border-white/10 space-y-5">
-                        <div><label for="name" class="block text-white/60 text-sm mb-1.5">Naam</label><input type="text" id="name" name="name" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors" placeholder="Uw naam"></div>
-                        <div><label for="company" class="block text-white/60 text-sm mb-1.5">Bedrijfsnaam</label><input type="text" id="company" name="company" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors" placeholder="Uw garage of bedrijf"></div>
-                        <div><label for="email" class="block text-white/60 text-sm mb-1.5">E-mailadres</label><input type="email" id="email" name="email" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors" placeholder="uw@email.nl"></div>
-                        <div><label for="phone" class="block text-white/60 text-sm mb-1.5">Telefoonnummer</label><input type="tel" id="phone" name="phone" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors" placeholder="06 - ..."></div>
-                        <div><label for="message" class="block text-white/60 text-sm mb-1.5">Bericht</label><textarea id="message" name="message" rows="4" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors resize-none" placeholder="Uw bericht..."></textarea></div>
+                    @if($errors->any())
+                    <div class="bg-red-500/20 border border-red-500/30 rounded-lg p-4 mb-4 text-red-300">
+                        <ul class="list-disc list-inside space-y-1">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul>
+                    </div>
+                    @endif
+                    <form action="{{ route('contact.submit') }}" method="POST" class="bg-white/5 backdrop-blur rounded-2xl p-6 sm:p-8 border border-white/10 space-y-5">
+                        @csrf
+                        <input type="hidden" name="source" value="Homepage">
+                        <div><label for="name" class="block text-white/60 text-sm mb-1.5">Naam</label><input type="text" id="name" name="name" value="{{ old('name') }}" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors" placeholder="Uw naam" required></div>
+                        <div><label for="company" class="block text-white/60 text-sm mb-1.5">Bedrijfsnaam</label><input type="text" id="company" name="company" value="{{ old('company') }}" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors" placeholder="Uw garage of bedrijf"></div>
+                        <div><label for="email" class="block text-white/60 text-sm mb-1.5">E-mailadres</label><input type="email" id="email" name="email" value="{{ old('email') }}" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors" placeholder="uw@email.nl" required></div>
+                        <div><label for="phone" class="block text-white/60 text-sm mb-1.5">Telefoonnummer</label><input type="tel" id="phone" name="phone" value="{{ old('phone') }}" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors" placeholder="06 - ..."></div>
+                        <div><label for="message" class="block text-white/60 text-sm mb-1.5">Bericht</label><textarea id="message" name="message" rows="4" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors resize-none" placeholder="Uw bericht..." required>{{ old('message') }}</textarea></div>
                         <button type="submit" class="w-full bg-pech-orange hover:bg-pech-orange-dark text-white py-3.5 rounded-lg font-semibold transition-colors duration-200 cursor-pointer">Verstuur bericht</button>
                     </form>
                 </div>
@@ -360,6 +363,7 @@
         const logoWhite = document.querySelector('.logo-white');
         const logoDark = document.querySelector('.logo-dark');
         const navLinks = document.querySelectorAll('.nav-link');
+        const mobileBtn = document.getElementById('mobile-menu-btn');
 
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset > 80;
@@ -368,6 +372,8 @@
             navbar.classList.toggle('shadow-black/5', scrolled);
             logoWhite.classList.toggle('hidden', scrolled);
             logoDark.classList.toggle('hidden', !scrolled);
+            mobileBtn.classList.toggle('text-white', !scrolled);
+            mobileBtn.classList.toggle('text-pech-dark', scrolled);
             navLinks.forEach(link => {
                 link.classList.toggle('text-white/80', !scrolled);
                 link.classList.toggle('hover:text-white', !scrolled);

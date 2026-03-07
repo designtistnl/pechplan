@@ -54,6 +54,32 @@
 @section('contact_href', '#pech-contact')
 
 @section('styles')
+    .auto-subnav {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+    .auto-subnav-link {
+        position: relative;
+        border-bottom: 3px solid transparent;
+        padding-bottom: 10px;
+    }
+    .auto-subnav-link.active {
+        border-bottom-color: #eb8a00;
+    }
+    .auto-subnav-link:hover {
+        border-bottom-color: rgba(235, 138, 0, 0.4);
+    }
+    .auto-subnav-link.active:hover {
+        border-bottom-color: #eb8a00;
+    }
+    #auto-subnav-scroll::-webkit-scrollbar { display: none; }
+    @keyframes nudge-right {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(4px); }
+    }
+    .subnav-arrow-icon {
+        animation: nudge-right 1.5s ease-in-out infinite;
+    }
     .auto-hero {
         position: relative;
         overflow: hidden;
@@ -101,13 +127,29 @@
                 </div>
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">Laat pech <br>snel achter u</h1>
                 <p class="text-white/70 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl">Pechhulp via uw eigen garage. Bij pech wordt eerst uw garage benaderd. Kan die niet helpen? Dan regelt PechPlan direct professionele hulp, zoals de ANWB.</p>
-                <p class="text-pech-orange font-semibold text-lg sm:text-xl">U staat nooit alleen.</p>
+                <p class="text-pech-orange font-semibold text-lg sm:text-xl">Al vanaf &euro;64,95 per jaar verzekerd van pechhulp.</p>
             </div>
         </div>
     </section>
 
-    <!-- Coverage cards -->
-    <section class="py-16 sm:py-20 bg-white">
+    <!-- Sticky sub-navigation -->
+    <div class="sticky top-20 z-40 bg-white/90 auto-subnav border-b border-gray-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <nav id="auto-subnav-scroll" class="flex overflow-x-auto gap-1 scrollbar-hide" style="-ms-overflow-style:none;scrollbar-width:none;" aria-label="Automobilisten informatie">
+                <a href="#hoe-werkt-het" class="auto-subnav-link active whitespace-nowrap px-4 py-3 text-sm font-medium text-pech-dark cursor-pointer">Hoe werkt het?</a>
+                <a href="#voordelen" class="auto-subnav-link whitespace-nowrap px-4 py-3 text-sm font-medium text-gray-400 cursor-pointer">Voordelen</a>
+                <a href="#tarieven" class="auto-subnav-link whitespace-nowrap px-4 py-3 text-sm font-medium text-gray-400 cursor-pointer">Tarieven</a>
+                <a href="#pech-contact" class="auto-subnav-link whitespace-nowrap px-4 py-3 text-sm font-medium text-gray-400 cursor-pointer">Pech melden</a>
+                <a href="#tip-garage" class="auto-subnav-link whitespace-nowrap px-4 py-3 text-sm font-medium text-gray-400 cursor-pointer">Tip uw garage</a>
+            </nav>
+            <button id="subnav-arrow" class="absolute right-0 top-0 bottom-0 flex items-center pl-4 pr-1 bg-gradient-to-l from-white/90 via-white/90 to-transparent md:hidden" aria-label="Meer items" onclick="scrollSubnavNext()">
+                <svg class="w-5 h-5 text-pech-orange subnav-arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Coverage cards & Hoe werkt het -->
+    <section id="hoe-werkt-het" class="py-16 sm:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto mb-16">
                 <div class="bg-pech-light rounded-2xl p-8 text-center fade-in">
@@ -149,7 +191,7 @@
     </section>
 
     <!-- Voordelen -->
-    <section class="py-16 sm:py-20 silver-gradient overflow-hidden">
+    <section id="voordelen" class="py-16 sm:py-20 silver-gradient overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-2xl sm:text-3xl font-bold text-pech-dark mb-10 text-center fade-in">Waarom PechPlan?</h2>
         </div>
@@ -220,31 +262,116 @@
         </div>
     </section>
 
+    <!-- Tarieven -->
+    <section id="tarieven" class="py-16 sm:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 fade-in">
+                <h2 class="text-2xl sm:text-3xl font-bold text-pech-dark mb-4">Tarieven</h2>
+                <p class="text-gray-500 text-lg">Kies de dekking die bij u past. Pechhulp via uw eigen garage, met de ANWB als achtervang.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                <div class="bg-pech-light rounded-2xl p-8 border border-gray-200 fade-in">
+                    <div class="text-sm font-semibold text-pech-orange mb-2">Nederland</div>
+                    <div class="flex items-baseline gap-1 mb-1">
+                        <span class="text-4xl font-bold text-pech-dark">&euro;64,95</span>
+                        <span class="text-gray-400 text-sm">/ jaar *</span>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-6">Dekking in heel Nederland</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-pech-orange flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Uw eigen garage als eerste aanspreekpunt</li>
+                        <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-pech-orange flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>ANWB als professionele achtervang</li>
+                        <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-pech-orange flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>24/7 bereikbaar</li>
+                    </ul>
+                </div>
+                <div class="bg-pech-light rounded-2xl p-8 border border-gray-200 relative fade-in">
+                    <div class="absolute -top-3 right-6 bg-pech-orange text-white text-xs font-bold px-3 py-1 rounded-full">Populair</div>
+                    <div class="text-sm font-semibold text-pech-orange mb-2">Europa</div>
+                    <div class="flex items-baseline gap-1 mb-1">
+                        <span class="text-4xl font-bold text-pech-dark">&euro;79,95</span>
+                        <span class="text-gray-400 text-sm">/ jaar *</span>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-6">Dekking in heel Europa</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-pech-orange flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Alles van Nederland-dekking</li>
+                        <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-pech-orange flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Pechhulp in heel Europa</li>
+                        <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-pech-orange flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Ideaal voor vakanties en zakenreizen</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-center text-gray-400 text-sm mt-6 fade-in">* Adviesprijs. Uw garage bepaalt de uiteindelijke prijs van uw PechPlan pas.</p>
+        </div>
+    </section>
+
     <!-- Pech CTA -->
-    <section id="pech-contact" class="py-20 sm:py-28 relative overflow-hidden">
-        <div class="absolute inset-0 bg-pech-dark"></div>
-        <div class="absolute inset-0 opacity-15" style="background: url('/images/Dark-pattern-bg.png') center center / cover no-repeat;"></div>
+    <section id="pech-contact" class="py-20 sm:py-28 bg-pech-orange relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <div class="max-w-2xl mx-auto fade-in">
-                <img src="/images/PechPlan-logo-vector-WO.svg" alt="PechPlan" class="h-12 mx-auto mb-8 opacity-80">
                 <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Heeft u pech?</h2>
-                <p class="text-white/60 text-lg mb-10">Neem direct contact op. Wij regelen de hulp.</p>
-                <a href="tel:0882474747" class="text-4xl sm:text-5xl font-bold text-pech-orange hover:text-pech-orange-light transition-colors duration-200">088 247 47 47</a>
-                <p class="text-white/40 text-sm mt-4">Of ga naar <a href="/help" class="text-pech-orange hover:underline font-medium">pechplan.nl/help</a></p>
+                <p class="text-white/80 text-lg mb-10">Neem direct contact op. Wij regelen de hulp.</p>
+                <a href="tel:0882474747" class="text-4xl sm:text-5xl font-bold text-white hover:text-white/80 transition-colors duration-200">088 247 47 47</a>
+                <p class="text-white/60 text-sm mt-4">Of ga naar <a href="/help" class="text-white font-medium hover:underline">pechplan.nl/help</a></p>
             </div>
         </div>
     </section>
 
-    <!-- Vraag aan uw garage -->
+    <!-- Nog geen PechPlan -->
     <section class="py-16 sm:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="max-w-2xl mx-auto fade-in">
                 <h2 class="text-2xl sm:text-3xl font-bold text-pech-dark mb-4">Nog geen PechPlan?</h2>
-                <p class="text-gray-500 text-lg mb-8">Vraag uw garage naar de mogelijkheden van PechPlan. Zij kunnen u direct aansluiten.</p>
-                <a href="/" class="inline-flex items-center gap-2 text-pech-orange font-semibold hover:gap-3 transition-all duration-200">
-                    Terug naar pechplan.nl
+                <p class="text-gray-500 text-lg mb-8">Vraag uw garage naar de mogelijkheden van PechPlan. Biedt uw garage PechPlan nog niet aan? Tip uw garage en wij helpen hen op weg.</p>
+                <a href="#tip-garage" class="inline-flex items-center gap-2 bg-pech-orange hover:bg-pech-orange-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 cursor-pointer">
+                    Tip uw garage
                     <svg class="w-5 h-5 btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tip uw garage -->
+    <section id="tip-garage" class="py-20 sm:py-28 relative overflow-hidden">
+        <div class="absolute inset-0 bg-pech-dark"></div>
+        <div class="absolute inset-0 opacity-15" style="background: url('/images/Dark-pattern-bg.png') center center / cover no-repeat;"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+                <div class="fade-in">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Tip uw garage</h2>
+                    <p class="text-white/60 text-lg mb-8">Biedt uw garage PechPlan nog niet aan? Laat het hen weten! Wij sturen uw garage een bericht met informatie over PechPlan en hoe eenvoudig de aansluiting is.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-pech-orange flex items-center justify-center flex-shrink-0 mt-0.5"><span class="text-white font-bold text-sm">1</span></div>
+                            <div><h3 class="text-white font-semibold mb-1">U vult het formulier in</h3><p class="text-white/50 text-sm">Uw naam, e-mail en de gegevens van uw garage.</p></div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-pech-orange flex items-center justify-center flex-shrink-0 mt-0.5"><span class="text-white font-bold text-sm">2</span></div>
+                            <div><h3 class="text-white font-semibold mb-1">Uw garage ontvangt een e-mail</h3><p class="text-white/50 text-sm">Met uw bericht en informatie over hoe zij PechPlan kunnen aanbieden.</p></div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-pech-orange flex items-center justify-center flex-shrink-0 mt-0.5"><span class="text-white font-bold text-sm">3</span></div>
+                            <div><h3 class="text-white font-semibold mb-1">U ontvangt een kopie</h3><p class="text-white/50 text-sm">Zodat u weet wat er naar uw garage is verstuurd.</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    @if($errors->any())
+                    <div class="bg-red-500/20 border border-red-500/30 rounded-lg p-4 mb-4 text-red-300">
+                        <ul class="list-disc list-inside space-y-1">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul>
+                    </div>
+                    @endif
+                    <form action="{{ route('garage-tip.submit') }}" method="POST" class="bg-white/5 backdrop-blur rounded-2xl p-6 sm:p-8 border border-white/10 space-y-5">
+                        @csrf
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <div><label for="user_name" class="block text-white/60 text-sm mb-1.5">Uw naam</label><input type="text" id="user_name" name="user_name" value="{{ old('user_name') }}" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors" placeholder="Uw naam" required></div>
+                            <div><label for="user_email" class="block text-white/60 text-sm mb-1.5">Uw e-mailadres</label><input type="email" id="user_email" name="user_email" value="{{ old('user_email') }}" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors" placeholder="uw@email.nl" required></div>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-5">
+                            <div><label for="garage_name" class="block text-white/60 text-sm mb-1.5">Naam garage / autobedrijf</label><input type="text" id="garage_name" name="garage_name" value="{{ old('garage_name') }}" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors" placeholder="Naam van uw garage" required></div>
+                            <div><label for="garage_email" class="block text-white/60 text-sm mb-1.5">E-mailadres garage</label><input type="email" id="garage_email" name="garage_email" value="{{ old('garage_email') }}" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors" placeholder="garage@email.nl" required></div>
+                        </div>
+                        <div><label for="tip_message" class="block text-white/60 text-sm mb-1.5">Bericht aan uw garage</label><textarea id="tip_message" name="message" rows="5" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors resize-none" required>{{ old('message', "Beste,\n\nIk ben klant bij uw garage en heb onlangs PechPlan ontdekt. PechPlan biedt pechhulp aan waarbij uw garage als eerste wordt ingeschakeld bij pech. Ik zou graag willen weten of ik een PechPlan pas via uw garage kan afsluiten.\n\nIk hoor graag wat de mogelijkheden zijn.\n\nMet vriendelijke groet") }}</textarea></div>
+                        <button type="submit" class="w-full bg-pech-orange hover:bg-pech-orange-dark text-white py-3.5 rounded-lg font-semibold transition-colors duration-200 cursor-pointer inline-flex items-center justify-center gap-2">Verstuur tip <svg class="w-5 h-5 btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -256,6 +383,76 @@
         const logoWhite = document.querySelector('.logo-white');
         const logoDark = document.querySelector('.logo-dark');
         const navLinks = document.querySelectorAll('.nav-link');
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const subnavLinks = document.querySelectorAll('.auto-subnav-link');
+        const sections = ['hoe-werkt-het', 'voordelen', 'tarieven', 'pech-contact', 'tip-garage'];
+
+        const subnavScroll = document.getElementById('auto-subnav-scroll');
+        const subnavArrow = document.getElementById('subnav-arrow');
+
+        // Center a subnav link in the scrollable nav
+        function centerSubnavLink(link) {
+            const nav = subnavScroll;
+            const linkCenter = link.offsetLeft + link.offsetWidth / 2;
+            const navCenter = nav.offsetWidth / 2;
+            nav.scrollTo({ left: linkCenter - navCenter, behavior: 'smooth' });
+        }
+
+        // Scroll to next off-screen subnav item
+        function scrollSubnavNext() {
+            const nav = subnavScroll;
+            const scrollRight = nav.scrollLeft + nav.offsetWidth;
+            for (const link of subnavLinks) {
+                if (link.offsetLeft + link.offsetWidth > scrollRight) {
+                    centerSubnavLink(link);
+                    break;
+                }
+            }
+        }
+
+        // Hide/show arrow based on scroll position
+        function updateSubnavArrow() {
+            if (!subnavArrow) return;
+            const nav = subnavScroll;
+            const atEnd = nav.scrollLeft + nav.offsetWidth >= nav.scrollWidth - 5;
+            subnavArrow.style.opacity = atEnd ? '0' : '1';
+            subnavArrow.style.pointerEvents = atEnd ? 'none' : 'auto';
+        }
+        subnavScroll.addEventListener('scroll', updateSubnavArrow);
+        window.addEventListener('resize', updateSubnavArrow);
+        updateSubnavArrow();
+
+        // Smooth scroll for subnav links
+        subnavLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                centerSubnavLink(link);
+                const id = link.getAttribute('href').substring(1);
+                const target = document.getElementById(id);
+                if (target) {
+                    const offset = navbar.offsetHeight + document.querySelector('.auto-subnav').offsetHeight + 24;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Highlight active subnav on scroll
+        function updateActiveSubnav() {
+            const offset = navbar.offsetHeight + document.querySelector('.auto-subnav').offsetHeight + 40;
+            let current = sections[0];
+            for (const id of sections) {
+                const el = document.getElementById(id);
+                if (el && el.getBoundingClientRect().top <= offset) current = id;
+            }
+            subnavLinks.forEach(link => {
+                const isActive = link.getAttribute('href') === '#' + current;
+                if (isActive && !link.classList.contains('active')) centerSubnavLink(link);
+                link.classList.toggle('active', isActive);
+                link.classList.toggle('text-pech-dark', isActive);
+                link.classList.toggle('text-gray-400', !isActive);
+            });
+        }
 
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset > 80;
@@ -270,6 +467,9 @@
                 link.classList.toggle('text-pech-dark/70', scrolled);
                 link.classList.toggle('hover:text-pech-dark', scrolled);
             });
+            mobileBtn.classList.toggle('text-white', !scrolled);
+            mobileBtn.classList.toggle('text-pech-dark', scrolled);
+            updateActiveSubnav();
         });
     </script>
 @endsection
