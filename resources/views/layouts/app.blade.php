@@ -42,7 +42,8 @@
     <meta name="author" content="Next Fleetservice BV">
     <meta name="geo.region" content="NL">
     <meta name="geo.placename" content="Nederland">
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
 
     <!-- Organization Schema (global) -->
     <script type="application/ld+json">
@@ -95,7 +96,8 @@
                         'pech-orange-light': '#f5a623',
                         'pech-dark': '#1d1d1b',
                         'pech-gray': '#2a2a28',
-                        'pech-light': '#f7f5f2',
+                        'pech-light': '#ebedf1',
+                        'pech-silver': '#e2e5ea',
                     },
                     fontFamily: {
                         'outfit': ['Outfit', 'sans-serif'],
@@ -133,6 +135,15 @@
         }
         .faq-answer.open {
             max-height: 500px;
+        }
+
+        .silver-gradient {
+            background:
+                radial-gradient(ellipse 90% 70% at 10% 15%, rgba(255,255,255,0.9) 0%, transparent 45%),
+                radial-gradient(ellipse 70% 90% at 90% 80%, rgba(255,255,255,0.8) 0%, transparent 40%),
+                radial-gradient(ellipse 60% 50% at 55% 40%, rgba(195,200,215,0.5) 0%, transparent 50%),
+                radial-gradient(ellipse 40% 60% at 30% 70%, rgba(210,215,230,0.4) 0%, transparent 45%),
+                linear-gradient(160deg, #f2f3f6 0%, #dde0e6 30%, #eceef2 55%, #d8dbe3 80%, #e8eaef 100%);
         }
 
         .subnav-scroll { scrollbar-width: none; -ms-overflow-style: none; }

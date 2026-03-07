@@ -268,7 +268,7 @@
     </section>
 
     <!-- Two audience teaser cards -->
-    <section class="py-20 sm:py-28 bg-pech-light">
+    <section class="py-20 sm:py-28 silver-gradient">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16 fade-in">
                 <h2 class="text-3xl sm:text-4xl font-bold text-pech-dark mb-4">Voor wie is PechPlan?</h2>
