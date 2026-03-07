@@ -51,6 +51,16 @@
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
+    <!-- Preload critical assets -->
+    @hasSection('preload')
+        @yield('preload')
+    @endif
+
+    <!-- BreadcrumbList Schema -->
+    @hasSection('breadcrumbs_schema')
+        @yield('breadcrumbs_schema')
+    @endif
+
     <!-- Organization Schema (global) -->
     <script type="application/ld+json">
     {
@@ -83,6 +93,34 @@
                 "opens": "00:00",
                 "closes": "23:59"
             }
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "LocalBusiness",
+        "name": "PechPlan",
+        "@@id": "https://pechplan.nl/#localbusiness",
+        "url": "https://pechplan.nl",
+        "telephone": "+31882474747",
+        "email": "info@pechplan.nl",
+        "image": "https://pechplan.nl/images/PechPlan-logo-vector-BO.svg",
+        "priceRange": "$$",
+        "address": {
+            "@@type": "PostalAddress",
+            "addressCountry": "NL"
+        },
+        "geo": {
+            "@@type": "GeoCoordinates",
+            "latitude": "52.3676",
+            "longitude": "4.9041"
+        },
+        "openingHoursSpecification": {
+            "@@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
         }
     }
     </script>
@@ -181,8 +219,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <a href="/" class="flex-shrink-0" aria-label="PechPlan home">
-                    <img src="/images/PechPlan-logo-vector-WO.svg" alt="PechPlan" class="h-8 sm:h-9 logo-white @yield('logo_white_class')">
-                    <img src="/images/PechPlan-logo-vector-BO.svg" alt="PechPlan" class="h-8 sm:h-9 logo-dark @yield('logo_dark_class', 'hidden')">
+                    <img src="/images/PechPlan-logo-vector-WO.svg" alt="PechPlan - Pechhulp via uw eigen garage" class="h-8 sm:h-9 logo-white @yield('logo_white_class')">
+                    <img src="/images/PechPlan-logo-vector-BO.svg" alt="PechPlan - Pechhulp via uw eigen garage" class="h-8 sm:h-9 logo-dark @yield('logo_dark_class', 'hidden')">
                 </a>
                 <div class="hidden md:flex items-center gap-8">
                     <a href="/garages" class="nav-link transition-colors duration-200 text-sm font-medium @yield('nav_link_class', 'text-white/80 hover:text-white')">Voor garages</a>
@@ -219,7 +257,7 @@
         <div class="absolute inset-0 opacity-15" style="background: url('/images/Dark-pattern-bg.webp') center center / cover no-repeat;"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <img src="/images/PechPlan-logo-vector-WO.svg" alt="PechPlan" class="h-6 opacity-40">
+                <img src="/images/PechPlan-logo-vector-WO.svg" alt="PechPlan logo" class="h-6 opacity-40" loading="lazy">
                 <p class="text-white/30 text-sm">&copy; {{ date('Y') }} Next Fleetservice BV. Alle rechten voorbehouden.</p>
             </div>
         </div>

@@ -5,6 +5,23 @@
 
 @section('og_image', url('/images/Workshop-at-golden-hour.webp'))
 
+@section('preload')
+    <link rel="preload" as="image" href="/images/Workshop-at-golden-hour.webp">
+@endsection
+
+@section('breadcrumbs_schema')
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@@type": "ListItem", "position": 1, "name": "Home", "item": "https://pechplan.nl" },
+            { "@@type": "ListItem", "position": 2, "name": "Voor garages", "item": "https://pechplan.nl/garages" }
+        ]
+    }
+    </script>
+@endsection
+
 @section('structured_data')
     <script type="application/ld+json">
     {

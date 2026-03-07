@@ -17,11 +17,11 @@
 ## 1. Technische SEO
 
 - [x] Afbeeldingen converteren naar WebP formaat (7.1MB -> 452KB)
-- [ ] Lazy loading op afbeeldingen (`loading="lazy"`)
-- [ ] Preload critical assets (fonts, hero afbeeldingen)
+- [x] Lazy loading op afbeeldingen (`loading="lazy"`)
+- [x] Preload critical assets (fonts, hero afbeeldingen)
 - [x] Hreflang tag toevoegen (nl-NL + x-default)
-- [ ] Breadcrumbs structured data
-- [ ] LocalBusiness structured data
+- [x] Breadcrumbs structured data
+- [x] LocalBusiness structured data
 - [x] FAQ structured data op automobilisten-pagina (5 vragen)
 - [ ] Review/Rating structured data voorbereiden
 
@@ -30,7 +30,7 @@
 - [ ] Landingspagina's per zoekintentie (`/pechhulp-via-eigen-garage`, `/goedkope-pechhulp`, `/pechhulp-garage-aanbieden`)
 - [ ] Blog/kennisbank sectie (long-tail zoekwoorden)
 - [ ] Interne linking versterken tussen pagina's
-- [ ] Alt-teksten op alle afbeeldingen controleren en verrijken
+- [x] Alt-teksten op alle afbeeldingen controleren en verrijken
 
 ## 3. Conversie-optimalisatie (CRO)
 
@@ -41,14 +41,14 @@
 
 ## 4. Lokale SEO
 
-- [ ] Google Business Profile aanmaken
+- [x] Google Business Profile aangemaakt
 - [ ] NAP-consistentie (Naam, Adres, Telefoon) overal gelijk
 - [ ] Lokale landingspagina's per regio/stad
 
 ## 5. Technische performance
 
 - [ ] Core Web Vitals optimaliseren (LCP, FID, CLS)
-- [ ] Server-side caching (Laravel response cache)
+- [x] Server-side caching (HTTP Cache-Control headers)
 - [ ] CDN voor statische assets
 - [x] Preconnect naar externe domeinen (fonts, GTM)
 - [x] Font-display: swap voor webfonts (reeds in Google Fonts URL)

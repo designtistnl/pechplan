@@ -7,15 +7,18 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return response(view('welcome')->render())
+        ->header('Cache-Control', 'public, max-age=3600, s-maxage=86400');
 });
 
 Route::get('/garages', function () {
-    return view('garages');
+    return response(view('garages')->render())
+        ->header('Cache-Control', 'public, max-age=3600, s-maxage=86400');
 });
 
 Route::get('/automobilisten', function () {
-    return view('automobilisten');
+    return response(view('automobilisten')->render())
+        ->header('Cache-Control', 'public, max-age=3600, s-maxage=86400');
 });
 
 Route::post('/contact', function (Request $request) {

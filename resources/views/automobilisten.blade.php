@@ -5,6 +5,23 @@
 
 @section('og_image', url('/images/Road-at-golden-hour.webp'))
 
+@section('preload')
+    <link rel="preload" as="image" href="/images/Road-at-golden-hour.webp">
+@endsection
+
+@section('breadcrumbs_schema')
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@@type": "ListItem", "position": 1, "name": "Home", "item": "https://pechplan.nl" },
+            { "@@type": "ListItem", "position": 2, "name": "Voor automobilisten", "item": "https://pechplan.nl/automobilisten" }
+        ]
+    }
+    </script>
+@endsection
+
 @section('structured_data')
     <script type="application/ld+json">
     {

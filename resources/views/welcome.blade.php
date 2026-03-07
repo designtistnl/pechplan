@@ -4,6 +4,23 @@
 @section('meta_description', 'PechPlan biedt pechhulp via uw eigen garage. Bij pech wordt eerst uw garage benaderd. ANWB als achtervang. 24/7 bereikbaar. Dekking in Nederland en Europa.')
 @section('og_image', url('/images/Workshop-at-golden-hour.webp'))
 
+@section('preload')
+    <link rel="preload" as="image" href="/images/Workshop-at-golden-hour.webp">
+    <link rel="preload" as="image" href="/images/Road-at-golden-hour.webp">
+@endsection
+
+@section('breadcrumbs_schema')
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@@type": "ListItem", "position": 1, "name": "Home", "item": "https://pechplan.nl" }
+        ]
+    }
+    </script>
+@endsection
+
 @section('structured_data')
     <script type="application/ld+json">
     {
