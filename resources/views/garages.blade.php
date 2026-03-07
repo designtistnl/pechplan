@@ -131,7 +131,7 @@
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H6.375c-.621 0-1.125-.504-1.125-1.125V14.25m17.25 4.5h.375a1.125 1.125 0 001.125-1.125v-3.375a3 3 0 00-.879-2.121L16.5 7.5h-4.5V4.875c0-.621-.504-1.125-1.125-1.125H4.875C4.254 3.75 3.75 4.254 3.75 4.875V14.25"/></svg>
                     Voor garages
                 </div>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">Pechhulp die uw klant<br> terugbrengt bij <span class="text-pech-orange">u</span></h1>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">Pechhulp die werkt<br> voor uw garage</h1>
                 <p class="text-white/70 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl">Veel automobilisten regelen pechhulp extern. In dat geval komt de hulpverlening bij pech vrijwel altijd van een partij buiten uw garage, terwijl u de auto kent en de relatie met de klant heeft opgebouwd.</p>
                 <p class="text-pech-orange font-semibold text-lg sm:text-xl">PechPlan draait dat principe om.</p>
             </div>
@@ -336,7 +336,7 @@
                             <div class="flex items-start gap-3"><svg class="w-5 h-5 text-pech-orange flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-white/80 text-sm">{{ $item }}</span></div>
                             @endforeach
                         </div>
-                        <a href="#contact" class="inline-flex items-center gap-2 bg-pech-orange hover:bg-pech-orange-dark text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200 cursor-pointer">Sluit uw garage aan <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                        <a href="#contact" class="inline-flex items-center gap-2 bg-pech-orange hover:bg-pech-orange-dark text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200 cursor-pointer">Sluit uw garage aan <svg class="w-5 h-5 btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
                     </div>
                 </div>
             </div>
@@ -364,7 +364,7 @@
                         <div><label for="company" class="block text-white/60 text-sm mb-1.5">Bedrijfsnaam</label><input type="text" id="company" name="company" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors" placeholder="Uw garage of bedrijf"></div>
                         <div><label for="email" class="block text-white/60 text-sm mb-1.5">E-mailadres</label><input type="email" id="email" name="email" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors" placeholder="uw@email.nl"></div>
                         <div><label for="message" class="block text-white/60 text-sm mb-1.5">Bericht</label><textarea id="message" name="message" rows="4" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-pech-orange/50 focus:border-pech-orange/50 transition-colors resize-none" placeholder="Uw bericht..."></textarea></div>
-                        <button type="submit" class="w-full bg-pech-orange hover:bg-pech-orange-dark text-white py-3.5 rounded-lg font-semibold transition-colors duration-200 cursor-pointer">Verstuur bericht</button>
+                        <button type="submit" class="w-full bg-pech-orange hover:bg-pech-orange-dark text-white py-3.5 rounded-lg font-semibold transition-colors duration-200 cursor-pointer inline-flex items-center justify-center gap-2">Verstuur bericht <svg class="w-5 h-5 btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></button>
                     </form>
                 </div>
             </div>

@@ -99,7 +99,7 @@
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
                     Voor automobilisten
                 </div>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">Laat pech <br><span class="text-pech-orange">snel achter u</span></h1>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">Laat pech <br>snel achter u</h1>
                 <p class="text-white/70 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl">Pechhulp via uw eigen garage. Bij pech wordt eerst uw garage benaderd. Kan die niet helpen? Dan regelt PechPlan direct professionele hulp, zoals de ANWB.</p>
                 <p class="text-pech-orange font-semibold text-lg sm:text-xl">U staat nooit alleen.</p>
             </div>
@@ -243,7 +243,7 @@
                 <p class="text-gray-500 text-lg mb-8">Vraag uw garage naar de mogelijkheden van PechPlan. Zij kunnen u direct aansluiten.</p>
                 <a href="/" class="inline-flex items-center gap-2 text-pech-orange font-semibold hover:gap-3 transition-all duration-200">
                     Terug naar pechplan.nl
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    <svg class="w-5 h-5 btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </a>
             </div>
         </div>

@@ -120,6 +120,9 @@
             transform: translateY(0);
         }
 
+        .btn-arrow { transition: transform 0.2s ease; }
+        button:hover .btn-arrow, a:hover .btn-arrow { transform: translateX(4px); }
+
         .benefit-card {
             transition: transform 0.25s ease, box-shadow 0.25s ease;
         }

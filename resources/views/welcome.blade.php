@@ -183,7 +183,7 @@
                     </p>
                     <a href="/garages" class="inline-flex items-center gap-2 bg-pech-orange hover:bg-pech-orange-dark text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200 cursor-pointer text-lg">
                         Ontdek de voordelen
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        <svg class="w-5 h-5 btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </a>
                 </div>
             </div>
@@ -203,7 +203,7 @@
                     </p>
                     <a href="/automobilisten" class="inline-flex items-center gap-2 bg-pech-orange hover:bg-pech-orange-dark text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200 cursor-pointer text-lg">
                         Bekijk de mogelijkheden
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        <svg class="w-5 h-5 btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </a>
                 </div>
             </div>
@@ -287,7 +287,7 @@
                     </ul>
                     <span class="inline-flex items-center gap-2 text-pech-orange font-semibold group-hover:gap-3 transition-all duration-200">
                         Meer informatie
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        <svg class="w-5 h-5 btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </span>
                 </a>
 
@@ -303,7 +303,7 @@
                     </ul>
                     <span class="inline-flex items-center gap-2 text-pech-orange font-semibold group-hover:gap-3 transition-all duration-200">
                         Meer informatie
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        <svg class="w-5 h-5 btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </span>
                 </a>
             </div>
