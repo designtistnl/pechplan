@@ -81,7 +81,7 @@
                 "name": "Wat kost PechPlan voor garages?",
                 "acceptedAnswer": {
                     "@@type": "Answer",
-                    "text": "De minimale tarieven zijn \u20ac64,95 per jaar per kenteken voor dekking in Nederland en \u20ac79,95 per jaar per kenteken voor Europadekking. Het grootste deel van de bijdrage wordt gereserveerd in een garagefonds. U bepaalt zelf de verkoopprijs; het bedrag boven het minimum wordt extra aan uw garagefonds toegevoegd."
+                    "text": "De minimale tarieven die de automobilist betaalt zijn \u20ac85,- per jaar per kenteken voor dekking in Nederland en \u20ac135,- per jaar per kenteken voor Europadekking. Het grootste deel van de bijdrage wordt gereserveerd in een garagefonds. U bepaalt zelf de verkoopprijs; het bedrag boven het minimum wordt extra aan uw garagefonds toegevoegd."
                 }
             }
         ]
@@ -230,13 +230,13 @@
                             <div><h3 class="font-bold text-pech-dark text-lg mb-2">Uw garagefonds</h3><p class="text-gray-600 leading-relaxed">Dit fonds wordt gebruikt om eventuele pechhulp te betalen. U kunt het saldo van dit fonds altijd zien in uw online garageaccount.</p></div>
                         </div>
                     </div>
-                    <div class="bg-gradient-to-br from-pech-dark to-pech-gray rounded-2xl p-6 sm:p-8 text-white">
-                        <h3 class="font-bold text-lg mb-4">Samengevat</h3>
+                    <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100">
+                        <h3 class="font-bold text-pech-dark text-lg mb-4">Samengevat</h3>
                         <ul class="space-y-3">
-                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-pech-orange flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-white/90">U biedt PechPlan passen aan uw klanten aan</span></li>
-                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-pech-orange flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-white/90">De klant betaalt een jaarlijkse bijdrage</span></li>
-                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-pech-orange flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-white/90">Het grootste deel gaat naar uw garagefonds</span></li>
-                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-pech-orange flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-white/90">PechPlan regelt de administratie en afhandeling</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-pech-orange flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-600">U biedt PechPlan passen aan uw klanten aan</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-pech-orange flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-600">De klant betaalt een jaarlijkse bijdrage</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-pech-orange flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-600">Het grootste deel gaat naar uw garagefonds</span></li>
+                            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-pech-orange flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-600">PechPlan regelt de administratie en afhandeling</span></li>
                         </ul>
                     </div>
                 </div>
@@ -246,40 +246,40 @@
             <div id="panel-tarieven" class="garage-panel hidden">
                 <div class="max-w-4xl fade-in">
                     <h2 class="text-2xl sm:text-3xl font-bold text-pech-dark mb-6">Abonnementstarieven en prijsstelling</h2>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-10">De minimale tarieven voor PechPlan zijn:</p>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-10">Hieronder staan de minimumtarieven die de automobilist betaalt voor PechPlan. Als garagehouder bepaalt u zelf de uiteindelijke verkoopprijs.</p>
                     <div class="grid sm:grid-cols-2 gap-6 mb-12">
                         <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border-2 border-gray-100 hover:border-pech-orange/30 transition-colors duration-200">
                             <div class="inline-flex items-center gap-2 bg-pech-orange/10 text-pech-orange px-3 py-1 rounded-full text-xs font-semibold mb-4">Nederland</div>
-                            <div class="flex items-baseline gap-1 mb-1"><span class="text-4xl font-bold text-pech-dark">&euro;64,95</span><span class="text-gray-400 text-sm">/jaar</span></div>
+                            <div class="flex items-baseline gap-1 mb-1"><span class="text-4xl font-bold text-pech-dark">&euro;85,-</span><span class="text-gray-400 text-sm">/jaar</span></div>
                             <p class="text-gray-400 text-sm mb-6">per kenteken</p>
                             <div class="space-y-3 text-sm">
-                                <div class="flex justify-between py-2 border-b border-gray-100"><span class="text-gray-500">Reservering garagefonds</span><span class="font-semibold text-pech-dark">&euro;50,00</span></div>
-                                <div class="flex justify-between py-2"><span class="text-gray-500">PechPlan servicekosten</span><span class="font-semibold text-pech-dark">&euro;14,95</span></div>
+                                <div class="flex justify-between py-2 border-b border-gray-100"><span class="text-gray-500">Reservering garagefonds</span><span class="font-semibold text-pech-dark">&euro;75,-</span></div>
+                                <div class="flex justify-between py-2"><span class="text-gray-500">PechPlan servicekosten</span><span class="font-semibold text-pech-dark">&euro;10,-</span></div>
                             </div>
                         </div>
                         <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border-2 border-pech-orange relative">
                             <div class="absolute -top-3 right-6 bg-pech-orange text-white px-3 py-0.5 rounded-full text-xs font-semibold">Populair</div>
                             <div class="inline-flex items-center gap-2 bg-pech-orange/10 text-pech-orange px-3 py-1 rounded-full text-xs font-semibold mb-4">Europa</div>
-                            <div class="flex items-baseline gap-1 mb-1"><span class="text-4xl font-bold text-pech-dark">&euro;79,95</span><span class="text-gray-400 text-sm">/jaar</span></div>
+                            <div class="flex items-baseline gap-1 mb-1"><span class="text-4xl font-bold text-pech-dark">&euro;135,-</span><span class="text-gray-400 text-sm">/jaar</span></div>
                             <p class="text-gray-400 text-sm mb-6">per kenteken</p>
                             <div class="space-y-3 text-sm">
-                                <div class="flex justify-between py-2 border-b border-gray-100"><span class="text-gray-500">Reservering garagefonds</span><span class="font-semibold text-pech-dark">&euro;65,00</span></div>
-                                <div class="flex justify-between py-2"><span class="text-gray-500">PechPlan servicekosten</span><span class="font-semibold text-pech-dark">&euro;14,95</span></div>
+                                <div class="flex justify-between py-2 border-b border-gray-100"><span class="text-gray-500">Reservering garagefonds</span><span class="font-semibold text-pech-dark">&euro;125,-</span></div>
+                                <div class="flex justify-between py-2"><span class="text-gray-500">PechPlan servicekosten</span><span class="font-semibold text-pech-dark">&euro;10,-</span></div>
                             </div>
                         </div>
                     </div>
                     <div class="bg-gradient-to-br from-pech-orange to-pech-orange-dark rounded-2xl p-6 sm:p-8 text-white">
-                        <h3 class="font-bold text-xl mb-3">U bepaalt zelf de verkoopprijs</h3>
-                        <p class="text-white/90 leading-relaxed mb-6">De genoemde bedragen zijn minimumprijzen. Wanneer u een hogere prijs rekent, wordt het volledige bedrag boven het minimum toegevoegd aan uw garagefonds.</p>
+                        <h3 class="font-bold text-xl mb-3">Hogere prijs? Meer in uw garagefonds</h3>
+                        <p class="text-white/90 leading-relaxed mb-6">Rekent u een hogere prijs dan het minimum? Dan wordt het volledige verschil extra toegevoegd aan uw garagefonds.</p>
                         <div class="bg-white/10 backdrop-blur rounded-xl p-5">
                             <h4 class="font-semibold text-sm uppercase tracking-wide mb-4 text-white/80">Voorbeeld: Nederland dekking</h4>
-                            <div class="flex items-center justify-between mb-3"><span class="text-white/80">Minimumprijs</span><span class="font-bold">&euro;64,95</span></div>
-                            <div class="flex items-center justify-between mb-3"><span class="text-white/80">U verkoopt voor</span><span class="font-bold">&euro;74,95</span></div>
+                            <div class="flex items-center justify-between mb-3"><span class="text-white/80">Minimumprijs</span><span class="font-bold">&euro;85,-</span></div>
+                            <div class="flex items-center justify-between mb-3"><span class="text-white/80">U verkoopt voor</span><span class="font-bold">&euro;95,-</span></div>
                             <div class="border-t border-white/20 my-3"></div>
                             <div class="space-y-2 text-sm">
-                                <div class="flex justify-between"><span class="text-white/70">Standaard reservering garagefonds</span><span>&euro;50,00</span></div>
-                                <div class="flex justify-between"><span class="text-white/70">Extra reservering garagefonds</span><span class="text-white font-semibold">&euro;10,00</span></div>
-                                <div class="flex justify-between"><span class="text-white/70">PechPlan servicekosten</span><span>&euro;14,95</span></div>
+                                <div class="flex justify-between"><span class="text-white/70">Standaard reservering garagefonds</span><span>&euro;75,-</span></div>
+                                <div class="flex justify-between"><span class="text-white/70">Extra reservering garagefonds</span><span class="text-white font-semibold">&euro;10,-</span></div>
+                                <div class="flex justify-between"><span class="text-white/70">PechPlan servicekosten</span><span>&euro;10,-</span></div>
                             </div>
                             <p class="text-white/80 text-sm mt-4">Uw garagefonds groeit sneller, waardoor u meer buffer opbouwt voor toekomstige pechgevallen.</p>
                         </div>
@@ -414,7 +414,7 @@
                     <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Neem contact op</h2>
                     <p class="text-white/60 text-lg mb-8">Wilt u PechPlan aanbieden aan uw klanten? Neem contact op en we vertellen u graag meer.</p>
                     <div class="space-y-6">
-                        <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-pech-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg></div><div><div class="text-white/40 text-sm">Telefoon</div><a href="tel:0882474747" class="text-white font-semibold hover:text-pech-orange transition-colors">088 247 47 47</a></div></div>
+                        <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-pech-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg></div><div><div class="text-white/40 text-sm">Telefoon</div><a href="tel:0882474700" class="text-white font-semibold hover:text-pech-orange transition-colors">088 247 47 00</a></div></div>
                         <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 text-pech-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></div><div><div class="text-white/40 text-sm">E-mail</div><a href="mailto:info@pechplan.nl" class="text-white font-semibold hover:text-pech-orange transition-colors">info@pechplan.nl</a></div></div>
                     </div>
                 </div>

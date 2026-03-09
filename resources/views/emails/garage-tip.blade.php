@@ -41,7 +41,7 @@
             <div class="cta-box">
                 <h3>Bied PechPlan aan via uw garage</h3>
                 <p>Steeds meer garages sluiten zich aan bij PechPlan om hun klanten pechhulp te bieden via hun eigen garage. De onboarding is eenvoudig en snel geregeld.</p>
-                <p style="margin-top: 12px;">Neem contact op met PechPlan via <a href="mailto:info@pechplan.nl" style="color: #eb8a00; font-weight: bold;">info@pechplan.nl</a> of bel <a href="tel:0882474747" style="color: #eb8a00; font-weight: bold;">088 247 47 47</a> om de mogelijkheden te bespreken.</p>
+                <p style="margin-top: 12px;">Neem contact op met PechPlan via <a href="mailto:info@pechplan.nl" style="color: #eb8a00; font-weight: bold;">info@pechplan.nl</a> of bel <a href="tel:0882474700" style="color: #eb8a00; font-weight: bold;">088 247 47 00</a> om de mogelijkheden te bespreken.</p>
             </div>
         </div>
         <div class="footer">

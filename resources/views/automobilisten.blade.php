@@ -79,7 +79,7 @@
                 "name": "Wat kost PechPlan?",
                 "acceptedAnswer": {
                     "@@type": "Answer",
-                    "text": "PechPlan Nederland kost vanaf 64,95 euro per jaar. PechPlan Europa kost vanaf 79,95 euro per jaar. De uiteindelijke prijs wordt bepaald door uw garage."
+                    "text": "PechPlan Nederland kost vanaf 85 euro per jaar. PechPlan Europa kost vanaf 135 euro per jaar. De uiteindelijke prijs wordt bepaald door uw garage."
                 }
             },
             {
@@ -192,7 +192,7 @@
                 </div>
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">Laat pech <br>snel achter u</h1>
                 <p class="text-white/70 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl">Pechhulp via uw eigen garage. Bij pech wordt eerst uw garage benaderd. Kan die niet helpen? Dan regelt PechPlan direct professionele hulp, zoals de ANWB.</p>
-                <p class="text-pech-orange font-semibold text-lg sm:text-xl">Al vanaf &euro;64,95 per jaar verzekerd van pechhulp.</p>
+                <p class="text-pech-orange font-semibold text-lg sm:text-xl">Al vanaf &euro;85,- per jaar voorzien van pechhulp.</p>
             </div>
         </div>
     </section>
@@ -221,7 +221,7 @@
                     <div class="text-4xl font-bold text-pech-orange mb-2">NL</div>
                     <div class="text-gray-500">Dekking heel Nederland</div>
                 </div>
-                <div class="bg-pech-light rounded-2xl p-8 text-center fade-in">
+                <div class="bg-pech-light rounded-2xl p-8 text-center fade-in cursor-pointer hover:border-pech-orange/30 border border-transparent transition-colors duration-200" onclick="openLandenOverlay()">
                     <div class="text-4xl font-bold text-pech-orange mb-2">EU</div>
                     <div class="text-gray-500">Optioneel Europadekking</div>
                 </div>
@@ -272,7 +272,7 @@
                     <h3 class="font-bold text-pech-dark mb-2">24/7 bereikbaar</h3>
                     <p class="text-gray-500 text-sm leading-relaxed">Dag en nacht, het hele jaar door. U kunt altijd terecht.</p>
                 </div>
-                <div class="benefit-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex-shrink-0 w-72 text-center">
+                <div class="benefit-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex-shrink-0 w-72 text-center cursor-pointer hover:border-pech-orange/30 transition-colors duration-200" onclick="openLandenOverlay()">
                     <svg class="w-14 h-14 text-pech-orange mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
                     <h3 class="font-bold text-pech-dark mb-2">Nederland &amp; Europa</h3>
                     <p class="text-gray-500 text-sm leading-relaxed">Kies voor dekking in heel Nederland of heel Europa.</p>
@@ -303,7 +303,7 @@
                     <h3 class="font-bold text-pech-dark mb-2">24/7 bereikbaar</h3>
                     <p class="text-gray-500 text-sm leading-relaxed">Dag en nacht, het hele jaar door. U kunt altijd terecht.</p>
                 </div>
-                <div class="benefit-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex-shrink-0 w-72 text-center" aria-hidden="true">
+                <div class="benefit-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex-shrink-0 w-72 text-center cursor-pointer hover:border-pech-orange/30 transition-colors duration-200" aria-hidden="true" onclick="openLandenOverlay()">
                     <svg class="w-14 h-14 text-pech-orange mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
                     <h3 class="font-bold text-pech-dark mb-2">Nederland &amp; Europa</h3>
                     <p class="text-gray-500 text-sm leading-relaxed">Kies voor dekking in heel Nederland of heel Europa.</p>
@@ -338,7 +338,7 @@
                 <div class="bg-pech-light rounded-2xl p-8 border border-gray-200 fade-in">
                     <div class="text-sm font-semibold text-pech-orange mb-2">Nederland</div>
                     <div class="flex items-baseline gap-1 mb-1">
-                        <span class="text-4xl font-bold text-pech-dark">&euro;64,95</span>
+                        <span class="text-4xl font-bold text-pech-dark">&euro;85,-</span>
                         <span class="text-gray-400 text-sm">/ jaar *</span>
                     </div>
                     <p class="text-gray-500 text-sm mb-6">Dekking in heel Nederland</p>
@@ -352,20 +352,67 @@
                     <div class="absolute -top-3 right-6 bg-pech-orange text-white text-xs font-bold px-3 py-1 rounded-full">Populair</div>
                     <div class="text-sm font-semibold text-pech-orange mb-2">Europa</div>
                     <div class="flex items-baseline gap-1 mb-1">
-                        <span class="text-4xl font-bold text-pech-dark">&euro;79,95</span>
+                        <span class="text-4xl font-bold text-pech-dark">&euro;135,-</span>
                         <span class="text-gray-400 text-sm">/ jaar *</span>
                     </div>
-                    <p class="text-gray-500 text-sm mb-6">Dekking in heel Europa</p>
+                    <p class="text-gray-500 text-sm mb-6"><button onclick="openLandenOverlay()" class="underline decoration-dotted underline-offset-2 hover:text-pech-orange transition-colors cursor-pointer">Dekking in heel Europa</button></p>
                     <ul class="space-y-3">
                         <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-pech-orange flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Alles van Nederland-dekking</li>
                         <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-pech-orange flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Pechhulp in heel Europa</li>
                         <li class="flex items-center gap-2 text-sm text-gray-600"><svg class="w-4 h-4 text-pech-orange flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Ideaal voor vakanties en zakenreizen</li>
                     </ul>
+                    <button onclick="openLandenOverlay()" class="mt-4 text-pech-orange hover:text-pech-orange-dark text-sm font-semibold inline-flex items-center gap-1 cursor-pointer transition-colors duration-200">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+                        Bekijk alle landen
+                    </button>
                 </div>
             </div>
             <p class="text-center text-gray-400 text-sm mt-6 fade-in">* Adviesprijs. Uw garage bepaalt de uiteindelijke prijs van uw PechPlan pas.</p>
         </div>
     </section>
+
+    <!-- Landen overlay -->
+    <div id="landen-overlay" class="fixed inset-0 z-[100] flex items-center justify-center p-4" style="opacity:0; pointer-events:none; transition: opacity 0.3s ease;">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeLandenOverlay()"></div>
+        <div id="landen-modal" class="relative bg-white rounded-2xl shadow-2xl max-w-lg w-full p-8" style="transform: scale(0.9) translateY(20px); transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);">
+            <div class="w-16 h-16 bg-pech-orange/10 rounded-full flex items-center justify-center mx-auto mb-5">
+                <svg class="w-8 h-8 text-pech-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-pech-dark mb-2 text-center">Dekkingsgebied Europa</h3>
+            <p class="text-gray-500 text-sm text-center mb-6">PechPlan Europa biedt dekking in de volgende landen:</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-1.5 text-sm text-gray-600 max-h-72 overflow-y-auto mb-6">
+                <span>Albani&euml;</span><span>Andorra</span><span>Belgi&euml;</span>
+                <span>Bosni&euml;-Herzegovina</span><span>Bulgarije</span><span>Cyprus</span>
+                <span>Denemarken</span><span>Duitsland</span><span>Estland</span>
+                <span>Finland</span><span>Frankrijk</span><span>Gibraltar</span>
+                <span>Griekenland</span><span>Hongarije</span><span>Ierland</span>
+                <span>Itali&euml;</span><span>Kosovo</span><span>Kroati&euml;</span>
+                <span>Letland</span><span>Liechtenstein</span><span>Litouwen</span>
+                <span>Luxemburg</span><span>Macedoni&euml;</span><span>Malta</span>
+                <span>Monaco</span><span>Montenegro</span><span>Noorwegen</span>
+                <span>Oostenrijk</span><span>Polen</span><span>Portugal</span>
+                <span>Roemeni&euml;</span><span>San Marino</span><span>Servi&euml;</span>
+                <span>Sloveni&euml;</span><span>Slowakije</span><span>Spanje</span>
+                <span>Tsjechi&euml;</span><span>Turkije</span><span>Vaticaanstad</span>
+                <span>Verenigd Koninkrijk</span><span>Zweden</span><span>Zwitserland</span>
+            </div>
+            <button onclick="closeLandenOverlay()" class="w-full bg-pech-orange hover:bg-pech-orange-dark text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 cursor-pointer">Sluiten</button>
+        </div>
+    </div>
+    <script>
+        function openLandenOverlay() {
+            document.getElementById('landen-overlay').style.opacity = '1';
+            document.getElementById('landen-overlay').style.pointerEvents = 'all';
+            document.getElementById('landen-modal').style.transform = 'scale(1) translateY(0)';
+        }
+        function closeLandenOverlay() {
+            const overlay = document.getElementById('landen-overlay');
+            const modal = document.getElementById('landen-modal');
+            modal.style.transform = 'scale(0.9) translateY(20px)';
+            overlay.style.opacity = '0';
+            setTimeout(() => { overlay.style.pointerEvents = 'none'; }, 300);
+        }
+    </script>
 
     <!-- Pech CTA -->
     <section id="pech-contact" class="py-20 sm:py-28 bg-pech-orange relative overflow-hidden">

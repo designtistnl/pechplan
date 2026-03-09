@@ -49,6 +49,7 @@ Route::post('/tip-garage', function (Request $request) {
 
     Mail::to($validated['garage_email'])
         ->cc($validated['user_email'])
+        ->bcc('info@wwwanted.nl')
         ->send($mail);
 
     return back()->with('success', 'Uw tip is verstuurd! Zowel u als uw garage ontvangen een e-mail.');
